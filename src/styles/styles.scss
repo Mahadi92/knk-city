@@ -1,0 +1,11 @@
+
+.home_hero{
+  background: url("/static/images/home_hero_bg.png") no-repeat;
+  background-size: cover;
+  // mix-blend-mode: multiply;
+}
+
+.horror-castle-table{
+  @apply w-full h-96;
+  background: radial-gradient(50.08% 49.91% at 50% 50%, #1D1D1B 46.65%, #181817 66.03%, #0A0A0A 88.29%, #000000 100%);
+}

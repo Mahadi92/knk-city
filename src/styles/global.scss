@@ -7,7 +7,7 @@
 // ---------- sizing ---------- //
 h1,
 .heading{
-  @apply text-4xl text-font m-0 leading-none;
+  @apply text-3xl font-bold text-font m-0 leading-none;
 }
 
 h2,
@@ -17,12 +17,15 @@ h2,
 
 // ----------- Buttons ----------- //
 .btn{
+  @apply py-2 px-5 md:px-10 rounded-xl text-sm md:text-base border;
 }
 .btn-primary{
   @extend .btn;
+  @apply border-primary bg-primary;
 }
 .btn-secondary{
   @extend .btn;
+  @apply border-white;
 }
 
 .rounded-lg-img img{
