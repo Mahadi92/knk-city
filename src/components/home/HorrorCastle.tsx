@@ -1,20 +1,45 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const HorrorCastle = () => {
+interface PropType {
+  data: {
+    id: number;
+    img: string;
+    title: string;
+    time: string;
+    cost: string;
+    warriorsRequired: string;
+    percentageSuccess: string;
+    requiredLevel: string;
+    potentialReward: string;
+  }[];
+  embarkDataId: number;
+}
+
+const HorrorCastle: React.FC<PropType> = ({ data, embarkDataId }) => {
+  const [selectedEmbarkData, setSelectedEmbarkData] = useState({});
+
+  useEffect(() => {
+    const selectedData = data.find((item) => item.id === embarkDataId);
+    setSelectedEmbarkData(selectedData);
+  }, [embarkDataId]);
+
   return (
     <section className="wrapper pb-28">
       <div className="border border-white rounded-lg">
         <div className="relative">
-          <Image
-            src="/static/images/horror.png"
-            layout="responsive"
-            width="100%"
-            height="40"
-            alt=""
-          />
+          {selectedEmbarkData?.img && (
+            <Image
+              src={selectedEmbarkData?.img}
+              layout="responsive"
+              objectFit="cover"
+              width="100%"
+              height="40"
+              alt=""
+            />
+          )}
           <h1 className="absolute uppercase bottom-10 left-20">
-            Horror Castle of Elilth
+            {selectedEmbarkData.title}
           </h1>
           <button className="btn-primary absolute top-10 right-10">
             Select Quest

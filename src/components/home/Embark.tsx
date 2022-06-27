@@ -1,7 +1,27 @@
 import Image from "next/image";
 import React from "react";
 
-const Embark = () => {
+interface PropType {
+  data: {
+    id: number;
+    img: string;
+    title: string;
+    time: string;
+    cost: string;
+    warriorsRequired: string;
+    percentageSuccess: string;
+    requiredLevel: string;
+    potentialReward: string;
+  }[];
+  embarkDataId: number;
+  setEmbarkDataId: any;
+}
+
+const Embark: React.FC<PropType> = ({
+  data,
+  embarkDataId,
+  setEmbarkDataId,
+}) => {
   return (
     <section className="wrapper py-20">
       <div>
@@ -11,36 +31,33 @@ const Embark = () => {
         </p>
       </div>
       <div className="w-full md:w-4/5 pt-14 grid grid-cols-2 md:grid-cols-3 gap-14">
-        <div>
-          <Image
-            src="/static/images/embark_img1.png"
-            layout="responsive"
-            width="100%"
-            height="100%"
-            alt=""
-          />
-          <p className="text-xl pt-4 ">Horror Castle of Elilth</p>
-        </div>
-        <div>
-          <Image
-            src="/static/images/embark_img2.png"
-            layout="responsive"
-            width="100%"
-            height="100%"
-            alt=""
-          />
-          <p className="text-xl pt-4  text-gray">Training Ground</p>
-        </div>
-        <div>
-          <Image
-            src="/static/images/embark_img3.png"
-            layout="responsive"
-            width="100%"
-            height="100%"
-            alt=""
-          />
-          <p className="text-xl pt-4  text-gray">Cathedral of Afareith</p>
-        </div>
+        {data.map((item, i) => {
+          return (
+            <div key={i} onClick={() => setEmbarkDataId(item.id)}>
+              <div
+                className={`rounded-lg rounded-lg-img overflow-hidden ${
+                  embarkDataId === item.id && "border-2 border-primary"
+                }`}
+              >
+                <Image
+                  src={item.img}
+                  layout="responsive"
+                  objectFit="cover"
+                  width="100%"
+                  height="100%"
+                  alt=""
+                />
+              </div>
+              <p
+                className={`${
+                  embarkDataId === item.id ? "text-white" : "text-gray"
+                } text-xl pt-4`}
+              >
+                Horror Castle of Elilth
+              </p>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
