@@ -20,7 +20,8 @@ const HorrorCastle: React.FC<PropType> = ({ data, embarkDataId }) => {
   const [selectedEmbarkData, setSelectedEmbarkData] = useState({});
 
   useEffect(() => {
-    const selectedData = data.find((item) => item.id === embarkDataId);
+    const selectedData =
+      data.find((item) => item.id === embarkDataId) || data[0];
     setSelectedEmbarkData(selectedData);
   }, [embarkDataId]);
 
