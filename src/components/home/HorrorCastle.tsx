@@ -16,8 +16,31 @@ interface PropType {
   embarkDataId: number;
 }
 
+interface EmbarkDataInterface {
+  id: number;
+  img: string;
+  title: string;
+  time: string;
+  cost: string;
+  warriorsRequired: string;
+  percentageSuccess: string;
+  requiredLevel: string;
+  potentialReward: string;
+}
+
 const HorrorCastle: React.FC<PropType> = ({ data, embarkDataId }) => {
-  const [selectedEmbarkData, setSelectedEmbarkData] = useState({});
+  const [selectedEmbarkData, setSelectedEmbarkData] =
+    useState<EmbarkDataInterface>({
+      id: 1,
+      img: "",
+      title: "",
+      time: "",
+      cost: "",
+      warriorsRequired: "",
+      percentageSuccess: "",
+      requiredLevel: "",
+      potentialReward: "",
+    });
 
   useEffect(() => {
     const selectedData =
