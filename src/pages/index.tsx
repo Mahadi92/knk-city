@@ -1,3 +1,4 @@
+import ActiveQuests from "@/components/home/ActiveQuests";
 import Embark from "@/components/home/Embark";
 import Header from "@/components/home/Header";
 import HorrorCastle from "@/components/home/HorrorCastle";
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
       <Embark />
       <div className="horror_active_section">
         <HorrorCastle />
+        <ActiveQuests />
       </div>
     </DefaultLayout>
   );
