@@ -20,7 +20,62 @@ const HorrorCastle = () => {
             Select Quest
           </button>
         </div>
-        <div className="horror-castle-table"></div>
+
+        {/* --------------------- Table section --------------------- */}
+        <div className="horror-castle-table">
+          <div className="p-14 grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* ------------- table right column ------------- */}
+            <div className="grid gap-10">
+              <div className="grid grid-cols-2">
+                <h3 className="m-0 underline underline-offset-2 text-base">
+                  Time
+                </h3>
+                <p className="m-0 text-base tracking-widest">6 days 0 hours</p>
+              </div>
+              <div className="grid grid-cols-2">
+                <h3 className="m-0 underline underline-offset-2 text-base">
+                  Cost
+                </h3>
+                <p className="m-0 text-base tracking-widest">8 $KAGE</p>
+              </div>
+              <div className="grid grid-cols-2">
+                <h3 className="m-0 underline underline-offset-2 text-base">
+                  Warriors required
+                </h3>
+                <p className="m-0 text-base tracking-widest">1 Minimum</p>
+              </div>
+            </div>
+
+            {/* ------------- table right column ------------- */}
+            <div className="grid gap-10">
+              <div className="grid grid-cols-2">
+                <h3 className="m-0 underline underline-offset-2 text-base">
+                  Percentage Success
+                </h3>
+                <p className="m-0 text-base tracking-widest">92%</p>
+              </div>
+              <div className="grid grid-cols-2">
+                <h3 className="m-0 underline underline-offset-2 text-base">
+                  Required Level
+                </h3>
+                <p className="m-0 text-base tracking-widest">Regular</p>
+              </div>
+              <div className="grid grid-cols-2">
+                <h3 className="m-0 underline underline-offset-2 text-base">
+                  Potential Reward
+                </h3>
+                <p className="m-0 text-base tracking-widest">
+                  Pool of 5k $KAGE Common Lootbox
+                </p>
+              </div>
+            </div>
+          </div>
+          <h3 className="px-14 py-3 m-0 text-base tracking-widest">
+            Create your warrior’s team
+          </h3>
+        </div>
+
+        {/* --------------------- Create your own team section --------------------- */}
         <div className="py-5 px-16 rounded-b-lg bg-gray-dark flex flex-col md:flex-row justify-between gap-[10%]">
           <div className="w-full md:w-1/2 grid grid-cols-3 gap-8">
             <Image

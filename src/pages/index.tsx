@@ -1,5 +1,6 @@
 import ActiveQuests from "@/components/home/ActiveQuests";
 import Embark from "@/components/home/Embark";
+import Footer from "@/components/home/Footer";
 import Header from "@/components/home/Header";
 import HorrorCastle from "@/components/home/HorrorCastle";
 import DefaultLayout from "@/components/layouts/DefaultLayout";
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
         <HorrorCastle />
         <ActiveQuests />
       </div>
+      <Footer />
     </DefaultLayout>
   );
 };
