@@ -18,3 +18,31 @@
 .knk_footer{
   background: url("/static/images/footer_bg.svg");
 }
+
+
+.ant-modal-close-x{
+  @apply flex items-center justify-center;
+}
+
+.ant-modal-title{
+  @apply text-center text-xl uppercase font-bold text-white; 
+}
+
+.custom-modal{
+  @apply bg-gray-dark;
+  .ant-modal-content, .ant-modal-header{
+    @apply bg-transparent
+  }
+}
+
+.win-modal{
+  .ant-modal-header{
+    @apply border-b border-[#1EC790]
+  }
+}
+
+.lose-modal{
+  .ant-modal-header{
+    @apply border-b border-[#C50000]
+  }
+}

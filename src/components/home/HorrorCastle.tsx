@@ -76,19 +76,19 @@ const HorrorCastle: React.FC<PropType> = ({ data, embarkDataId }) => {
             {/* ------------- table right column ------------- */}
             <div className="grid gap-10">
               <div className="grid grid-cols-2">
-                <h3 className="m-0 underline underline-offset-2 text-base">
+                <h3 className="m-0 underline underline-offset-2 text-base text-white">
                   Time
                 </h3>
                 <p className="m-0 text-base tracking-widest">6 days 0 hours</p>
               </div>
               <div className="grid grid-cols-2">
-                <h3 className="m-0 underline underline-offset-2 text-base">
+                <h3 className="m-0 underline underline-offset-2 text-base text-white">
                   Cost
                 </h3>
                 <p className="m-0 text-base tracking-widest">8 $KAGE</p>
               </div>
               <div className="grid grid-cols-2">
-                <h3 className="m-0 underline underline-offset-2 text-base">
+                <h3 className="m-0 underline underline-offset-2 text-base text-white">
                   Warriors required
                 </h3>
                 <p className="m-0 text-base tracking-widest">1 Minimum</p>
@@ -98,19 +98,19 @@ const HorrorCastle: React.FC<PropType> = ({ data, embarkDataId }) => {
             {/* ------------- table right column ------------- */}
             <div className="grid gap-10">
               <div className="grid grid-cols-2">
-                <h3 className="m-0 underline underline-offset-2 text-base">
+                <h3 className="m-0 underline underline-offset-2 text-base text-white">
                   Percentage Success
                 </h3>
                 <p className="m-0 text-base tracking-widest">92%</p>
               </div>
               <div className="grid grid-cols-2">
-                <h3 className="m-0 underline underline-offset-2 text-base">
+                <h3 className="m-0 underline underline-offset-2 text-base text-white">
                   Required Level
                 </h3>
                 <p className="m-0 text-base tracking-widest">Regular</p>
               </div>
               <div className="grid grid-cols-2">
-                <h3 className="m-0 underline underline-offset-2 text-base">
+                <h3 className="m-0 underline underline-offset-2 text-base text-white">
                   Potential Reward
                 </h3>
                 <p className="m-0 text-base tracking-widest">
