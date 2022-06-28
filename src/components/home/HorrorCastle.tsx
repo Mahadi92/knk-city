@@ -212,6 +212,7 @@ const HorrorCastle: React.FC<PropType> = ({ data, embarkDataId }) => {
         onCancel={() => setAddWarrior(false)}
         closeIcon={<CancelIcoWhite />}
         footer={null}
+        width={"80%"}
         style={{ borderRadius: "10px" }}
         className="custom-modal-dark"
       >
