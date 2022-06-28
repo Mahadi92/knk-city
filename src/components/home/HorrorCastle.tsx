@@ -1,5 +1,8 @@
+import { Modal } from "antd";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import ChooseWarriorModal from "../ChooseWarriorModal";
+import CancelIcoWhite from "../icons/CancelIcoWhite";
 
 interface PropType {
   data: {
@@ -41,6 +44,8 @@ const HorrorCastle: React.FC<PropType> = ({ data, embarkDataId }) => {
       requiredLevel: "",
       potentialReward: "",
     });
+
+  const [addWarrior, setAddWarrior] = useState(false);
 
   useEffect(() => {
     const selectedData =
@@ -134,7 +139,12 @@ const HorrorCastle: React.FC<PropType> = ({ data, embarkDataId }) => {
               height="130"
               alt=""
             />
-            <div className="w-full h-full border border-gray rounded-lg flex flex-col items-center justify-center gap-4">
+            <button
+              onClick={() => {
+                setAddWarrior(true);
+              }}
+              className="w-full h-full border border-gray rounded-lg flex flex-col items-center justify-center gap-4"
+            >
               <span className="text-gray">Add warrior</span>
 
               <div className="w-8 h-8 flex justify-center items-center border border-gray rounded-full">
@@ -145,8 +155,13 @@ const HorrorCastle: React.FC<PropType> = ({ data, embarkDataId }) => {
                   alt=""
                 />
               </div>
-            </div>
-            <div className="w-full h-full border border-gray rounded-lg flex flex-col items-center justify-center gap-4">
+            </button>
+            <button
+              onClick={() => {
+                setAddWarrior(true);
+              }}
+              className="w-full h-full border border-gray rounded-lg flex flex-col items-center justify-center gap-4"
+            >
               <span className="text-gray">Add warrior</span>
 
               <div className="w-8 h-8 flex justify-center items-center border border-gray rounded-full">
@@ -157,7 +172,7 @@ const HorrorCastle: React.FC<PropType> = ({ data, embarkDataId }) => {
                   alt=""
                 />
               </div>
-            </div>
+            </button>
           </div>
           <div className="w-full md:w-1/2 grid grid-cols-3 gap-10 pt-5 md:pt-0">
             <div className="w-full h-full flex items-center justify-center">
@@ -187,6 +202,21 @@ const HorrorCastle: React.FC<PropType> = ({ data, embarkDataId }) => {
           </div>
         </div>
       </div>
+
+      {/* ---------------- Modals ------------------- */}
+      <Modal
+        title="Choose your warrior"
+        centered
+        closable={true}
+        visible={addWarrior}
+        onCancel={() => setAddWarrior(false)}
+        closeIcon={<CancelIcoWhite />}
+        footer={null}
+        style={{ borderRadius: "10px" }}
+        className="custom-modal-dark"
+      >
+        <ChooseWarriorModal setAddWarrior={setAddWarrior} />
+      </Modal>
     </section>
   );
 };

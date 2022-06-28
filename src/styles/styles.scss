@@ -35,6 +35,13 @@
   }
 }
 
+.custom-modal-dark{
+  @apply bg-black shadow shadow-gray-800/40;
+  .ant-modal-content, .ant-modal-header{
+    @apply bg-transparent border-none;
+  }
+}
+
 .win-modal{
   .ant-modal-header{
     @apply border-b border-[#1EC790]
