@@ -1,7 +1,33 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+
+const warriorData = [
+  {
+    id: 1,
+    img: "/static/images/home_hero_grid_1.png",
+    bgImg: "",
+  },
+  {
+    id: 2,
+    img: "/static/images/home_hero_grid_2.png",
+    bgImg: "",
+  },
+  {
+    id: 3,
+    img: "/static/images/home_hero_grid_3.png",
+    bgImg: "",
+  },
+];
 
 const Header = () => {
+  const [singleWarriorData, setSingleWarriorData] = useState(
+    warriorData[0] || {}
+  );
+  console.log(
+    "🚀 ~ file: Header.tsx ~ line 26 ~ Header ~ singleWarriorData",
+    singleWarriorData
+  );
+
   return (
     <header className="home_hero w-full">
       <div className="wrapper py-20">
@@ -15,33 +41,29 @@ const Header = () => {
                 Found 3 characters
               </span>
               <div className="grid grid-cols-2 gap-2 md:gap-5">
-                <Image
-                  src="/static/images/home_hero_grid_1.png"
-                  layout="responsive"
-                  width="100%"
-                  height="100%"
-                  alt=""
-                />
-                <Image
-                  src="/static/images/home_hero_grid_2.png"
-                  layout="responsive"
-                  width="100%"
-                  height="100%"
-                  alt=""
-                />
-                <Image
-                  src="/static/images/home_hero_grid_3.png"
-                  layout="responsive"
-                  width="100%"
-                  height="100%"
-                  alt=""
-                />
+                {warriorData.map((item, i) => {
+                  return (
+                    <div
+                      key={i}
+                      onClick={() => setSingleWarriorData(item)}
+                      className="w-full h-full"
+                    >
+                      <Image
+                        src={item.img}
+                        layout="responsive"
+                        width="100%"
+                        height="100%"
+                        alt=""
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
           <div className="col-span-5 md:col-span-7">
             <Image
-              src="/static/images/home_hero_img.png"
+              src={singleWarriorData.img || "/static/images/home_hero_img.png"}
               layout="responsive"
               width="100%"
               height="100%"
